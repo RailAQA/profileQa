@@ -23,6 +23,5 @@ browser.execute_script('return arguments[0].scrollIntoView(true);', radio)
 radio.click()
 browser.find_element(By.CLASS_NAME, 'btn').click()
 
-sleep(5)
+sleep(4)
 browser.quit()
-
