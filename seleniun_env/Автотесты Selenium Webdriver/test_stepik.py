@@ -24,8 +24,8 @@ class Test_To_DO:
         driver.get("https://stepik.org/lesson/236895/step/1")
         WebDriverWait(driver, 20).until(EC.text_to_be_present_in_element((By.XPATH, '//*[@id="ember520"]/span/p'), 'test input'))
         login_button = driver.find_element(By.CLASS_NAME, 'navbar__auth').click()
-        driver.find_element(By.NAME, 'login').send_keys("bublik0706@gmail.com")
-        driver.find_element(By.NAME, 'password').send_keys('Railka123')
+        driver.find_element(By.NAME, 'login').send_keys("login")
+        driver.find_element(By.NAME, 'password').send_keys('password')
         driver.find_element(By.CLASS_NAME, 'sign-form__btn').click()
         WebDriverWait(driver, 20).until(EC.element_attribute_to_include((By.CLASS_NAME, 'submit-submission'), 'disabled'))
         #assert driver.find_element(By.CSS_SELECTOR, '[data-ember-action-508="508"]').text == 'Оставить комментарий', "Логин не произошел"
