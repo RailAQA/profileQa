@@ -2,7 +2,7 @@ from selenium import webdriver
 import pytest
 
 # Фикстура для всех автотестов
-@pytest.fixture()
+@pytest.fixture(scope='session')
 def driver():
     driver = webdriver.Chrome()
     yield driver
