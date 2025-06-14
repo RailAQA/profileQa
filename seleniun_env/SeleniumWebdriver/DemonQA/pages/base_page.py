@@ -6,6 +6,11 @@ class BasePage:
         # Инициализация драйвера из фикстуры
         self.driver = driver
 
+    def open(self, url):
+        # Открыть страницу по ссылке (url)
+        self.driver.get(url)
+        assert url == self.current_url, f'Ошибка в [BasePage] - Ожидаемая ссылка {url} не совпадает с фактической ссылкой {self.current_url}'
+    
     def current_url(self):
         # Получить ссылку страницы
          return self.driver.current_url

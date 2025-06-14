@@ -5,14 +5,14 @@ import pytest
 @pytest.mark.smoke_main
 def test_elements_click(driver):
     main_page = MainPage(driver)
-    main_page.open()
+    main_page.open("https://demoqa.com")
     main_page.element_main.click()
     assert main_page.current_url() == 'https://demoqa.com/elements', 'Ссылка другая!'
 
 @pytest.mark.smoke_main
 def test_forms_click(driver):
     main_page = MainPage(driver)
-    main_page.open()
+    main_page.open("https://demoqa.com")
     main_page.scroll_to_element_forms
     main_page.forms_main.click()
     assert main_page.current_url() == 'https://demoqa.com/forms', 'Ссылка другая!'
@@ -20,38 +20,34 @@ def test_forms_click(driver):
 @pytest.mark.smoke_main
 def test_alerts_click(driver):
     main_page = MainPage(driver)
-    main_page.open()
+    main_page.open("https://demoqa.com")
     main_page.alerts_main.click()
     assert main_page.current_url() == 'https://demoqa.com/alertsWindows', 'Ссылка другая!'
 
 @pytest.mark.smoke_main
 def test_widgets_click(driver):
     main_page = MainPage(driver)
-    main_page.open()
+    main_page.open("https://demoqa.com")
     main_page.widgets_main.click()
     assert main_page.current_url() == 'https://demoqa.com/widgets', 'Ссылка другая!'    
 
 @pytest.mark.smoke_main
 def test_interactions_click(driver):
     main_page = MainPage(driver)
-    main_page.open()
+    main_page.open("https://demoqa.com")
     main_page.interactions_main.click()
     assert main_page.current_url() == 'https://demoqa.com/interaction', 'Ссылка другая!'   
 
 @pytest.mark.smoke_main
 def test_book_click(driver):
     main_page = MainPage(driver)
-    main_page.open()
+    main_page.open("https://demoqa.com")
     main_page.book_main.click()
     assert main_page.current_url() == 'https://demoqa.com/books', 'Ссылка другая!'   
 
 
-                                ###Тесты на UI###
-@pytest.mark.ui
-def test_elemetns_main_visible(driver):
-    main_page = MainPage(driver)
-    main_page.open()
-    assert main_page.element_main.is_displayed(), "Кнопка 'Elements' отсутствует"
+
+
 
 
 

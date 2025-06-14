@@ -37,8 +37,8 @@ class MainPage(BasePage):
    def book_main(self):
       return self.find(book_button_locator)
    
-   def open(self):
-      self.driver.get('https://demoqa.com')
+   #def open(self):
+     # self.driver.get('https://demoqa.com')
 
    def scroll_to_element_forms(self):
       self.scroll_to_element(forms_button_locator)
