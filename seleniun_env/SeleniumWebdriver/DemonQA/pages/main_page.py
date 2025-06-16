@@ -8,6 +8,7 @@ alers_button_locator = (By.XPATH, '//*[@id="app"]/div/div/div[2]/div/div[3]')
 widgets_button_locator = (By.XPATH, '//*[@id="app"]/div/div/div[2]/div/div[4]')
 interactions_button_locator = (By.XPATH, '//*[@id="app"]/div/div/div[2]/div/div[5]')
 book_button_locator = (By.XPATH, '//*[@id="app"]/div/div/div[2]/div/div[6]')
+header_locator = (By.CSS_SELECTOR, '[src="/images/Toolsqa.jpg"]')
 
 class MainPage(BasePage):
    def __init__(self, driver):
@@ -37,8 +38,13 @@ class MainPage(BasePage):
    def book_main(self):
       return self.find(book_button_locator)
    
-   #def open(self):
-     # self.driver.get('https://demoqa.com')
+   def element_main_click(self):
+         self.element_main.click()
+         assert self.current_url() == 'https://demoqa.com/elements', f"[MainPage] - Открыта ссылка - {self.current_url}, а должна быть -  'https://demoqa.com/elements'"
+
+   def header_click(self):
+      self.driver.find_element(*header_locator)
+
 
    def scroll_to_element_forms(self):
       self.scroll_to_element(forms_button_locator)

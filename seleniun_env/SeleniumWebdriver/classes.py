@@ -18,5 +18,10 @@ class Engine(AutoMobile):
         
 GLE = Engine('Мерс', 'Гелик', 2025, 'Брабус', 20000000)
 print(GLE.calculate_price_eng())
+
+
+
+
+
         
 
