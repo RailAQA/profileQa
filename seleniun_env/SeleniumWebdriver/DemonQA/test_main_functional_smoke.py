@@ -1,7 +1,5 @@
 from pages.main_page import MainPage
-from selenium.webdriver.common.by import By
 import pytest
-import allure
 
 @pytest.mark.smoke_main
 def test_elements_click(driver):

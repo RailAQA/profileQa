@@ -15,13 +15,16 @@ class BasePage:
     def open(self, url):
         # Открыть страницу по ссылке (url)
         self.driver.get(url)
-        # Проверка, что ссылка открывается, прогружается через 
+        # Проверка, что ссылка открывается, прогружается через 15 ctr
         try:
             self.wait(15).until(EC.visibility_of_element_located((By.CSS_SELECTOR, '[src="/images/Toolsqa.jpg"]')))
         except TimeoutError:
             raise AssertionError(f"[Base_Page] - Страница не открылась. Шапка сайта не отобразилась")
         # Проверяем, что открылась правильная ссылка
         assert url == self.current_url() or url[8:] == self.current_url(), f'Ошибка в [BasePage] - Ожидаемая ссылка {url} не совпадает с фактической ссылкой {self.current_url()}'
+        if url == "https://demoqa.com/elements":
+            elements_submenu_visible = (By.XPATH, '//div[@class="element-group"]//div[@class="element-list collapse show"]')
+            assert self.find(elements_submenu_visible).is_displayed
     
     def current_url(self):
         # Получить ссылку страницы
