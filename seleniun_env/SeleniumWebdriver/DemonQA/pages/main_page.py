@@ -16,34 +16,41 @@ class MainPage(BasePage):
 
    @property
    def element_main(self):
+      assert self.find(elements_button_locator).is_enabled()
       return self.find(elements_button_locator)
    
    @property
    def forms_main(self):
+      assert self.find(forms_button_locator).is_enabled()
       return self.find(forms_button_locator)
    
    @property
    def alerts_main(self):
+      assert self.find(alers_button_locator).is_enabled()
       return self.find(alers_button_locator)
    
    @property
    def interactions_main(self):
+      assert self.find(interactions_button_locator).is_enabled()
       return self.find(interactions_button_locator)
    
    @property
    def widgets_main(self):
+      assert self.find(widgets_button_locator).is_enabled()
       return self.find(widgets_button_locator)
    
    @property
    def book_main(self):
+      assert self.find(book_button_locator).is_enabled()
       return self.find(book_button_locator)
    
    def element_main_click(self):
-         self.element_main.click()
-         assert self.current_url() == 'https://demoqa.com/elements', f"[MainPage] - Открыта ссылка - {self.current_url}, а должна быть -  'https://demoqa.com/elements'"
+      self.element_main.click()
+      assert self.current_url() == 'https://demoqa.com/elements', f"[MainPage] - Открыта ссылка - {self.current_url}, а должна быть -  'https://demoqa.com/elements'"
 
    def header_click(self):
-      self.driver.find_element(*header_locator)
+      self.find(header_locator).click()
+      assert self.current_url() == "https://demoqa.com/", f'Error [MainPage] - После клика на HEADER, фактический результата - ссылка = {self.current_url()}, а должно быть "https://demoqa.com/"'
 
 
    def scroll_to_element_forms(self):
