@@ -2,6 +2,11 @@ from pages.elements_page import ElementsPage
 import pytest
 
 # Проверяем кликабельность субменю у Elements
+def test_elements_menu_is_default(driver):
+    elements_page = ElementsPage(driver)
+    elements_page.open('https://demoqa.com/elements')
+    
+
 @pytest.mark.smoke_elements
 def test_textbox_submenu_click(driver):
     elements_page = ElementsPage(driver)

@@ -3,6 +3,8 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
+HEADER_LOCATOR = (By.CSS_SELECTOR, '[src="/images/Toolsqa.jpg"]')
+
 class BasePage:
     def __init__(self, driver):
         # Инициализация драйвера из фикстуры
@@ -17,7 +19,8 @@ class BasePage:
         self.driver.get(url)
         # Проверка, что ссылка открывается, прогружается через 15 сек
         try:
-            self.wait(15).until(EC.visibility_of_element_located((By.CSS_SELECTOR, '[src="/images/Toolsqa.jpg"]')))
+            #self.wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, '[src="/images/Toolsqa.jpg"]')))
+            self.element_is_visible(HEADER_LOCATOR)
         except TimeoutError:
             raise AssertionError(f"[Base_Page] - Страница не открылась. Шапка сайта не отобразилась")
         # Проверяем, что открылась правильная ссылка
@@ -35,10 +38,15 @@ class BasePage:
     def scroll_to_element(self, args):
         self.driver.execute_script('return arguments[0].ScrollIntoView(true);', *args)
 
-    def wait(self, timeout):
+    @property
+    def wait(self, timeout=15):
         # Часть ф-ии явного ожидания WebDriverWait(driver, время)
         return WebDriverWait(self.driver, timeout)
-        
+    
+    def element_is_visible(self, args):
+        self.wait.until(EC.visibility_of_element_located(args))
+
+    
      
     
 

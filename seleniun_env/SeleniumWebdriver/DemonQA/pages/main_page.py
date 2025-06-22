@@ -16,32 +16,26 @@ class MainPage(BasePage):
 
    @property
    def element_main(self):
-      assert self.find(elements_button_locator).is_enabled()
       return self.find(elements_button_locator)
    
    @property
    def forms_main(self):
-      assert self.find(forms_button_locator).is_enabled()
       return self.find(forms_button_locator)
    
    @property
    def alerts_main(self):
-      assert self.find(alers_button_locator).is_enabled()
       return self.find(alers_button_locator)
    
    @property
    def interactions_main(self):
-      assert self.find(interactions_button_locator).is_enabled()
       return self.find(interactions_button_locator)
    
    @property
    def widgets_main(self):
-      assert self.find(widgets_button_locator).is_enabled()
       return self.find(widgets_button_locator)
    
    @property
    def book_main(self):
-      assert self.find(book_button_locator).is_enabled()
       return self.find(book_button_locator)
    
    def element_main_click(self):

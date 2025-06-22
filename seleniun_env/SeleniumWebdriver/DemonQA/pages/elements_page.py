@@ -9,6 +9,7 @@ ALERTS_MENU_BUTTON = (By.XPATH, "//div[text()='Alerts, Frame & Windows']")
 WIDGET_MENU_BUTTON = (By.XPATH, "//div[text()='Widgets']")
 INTERACTIONS_MENU_BUTTON = (By.XPATH, "//div[text()='Interactions']")
 BOOK_MENU_BUTTON = (By.XPATH, "//div[text()='Book Store Application']")
+SUBMENU_ELEMENTS_LOCATOR = (By.XPATH, '//div[@class="element-group"][1]//div[@class="element-list collapse show"]')
 
 #Подменю у раздела Elements
 TEXT_BOX_IN_ELEMENTS_MENU = (By.XPATH, '//ul[@class="menu-list"]//li[@id="item-0"]//span[text()="Text Box"]')
@@ -48,6 +49,10 @@ class ElementsPage(BasePage):
     def book_menu(self):
         return self.find(BOOK_MENU_BUTTON)
     
+    @property
+    def submenu_elements(self):
+        return self.find(SUBMENU_ELEMENTS_LOCATOR)
+    
     # Клик по элементам подменю раздела Elements
     def textbox_in_elements_menu_click(self):
         self.find(TEXT_BOX_IN_ELEMENTS_MENU).click()
@@ -63,27 +68,27 @@ class ElementsPage(BasePage):
 
     def webtables_in_elements_menu_click(self):
         self.find(WEB_TABLES_IN_ELEMENTS_MENU).click()
-        assert self.current_url() == "https://demoqa.com/radio-button", f'[elements_page] Открылась страница {self.current_url()}, а должна "https://demoqa.com/webtables"'
+        assert self.current_url() == "https://demoqa.com/webtables", f'[elements_page] Открылась страница {self.current_url()}, а должна "https://demoqa.com/webtables"'
 
     def buttons_in_elements_menu_click(self):
         self.find(BUTTONS_IN_ELEMENTS_MENU).click()
-        assert self.current_url() == "https://demoqa.com/radio-button", f'[elements_page] Открылась страница {self.current_url()}, а должна "https://demoqa.com/buttons"'
+        assert self.current_url() == "https://demoqa.com/buttons", f'[elements_page] Открылась страница {self.current_url()}, а должна "https://demoqa.com/buttons"'
 
     def links_in_elements_menu_click(self):
         self.find(LINKS_SUBMENU_IN_ELEMENTS_MENU).click()
-        assert self.current_url() == "https://demoqa.com/radio-button", f'[elements_page] Открылась страница {self.current_url()}, а должна "https://demoqa.com/links"'
+        assert self.current_url() == "https://demoqa.com/links", f'[elements_page] Открылась страница {self.current_url()}, а должна "https://demoqa.com/links"'
 
     def brokenlinks_in_elements_menu_click(self):
         self.find(BROKEN_LINKS_SUBMENU_IN_ELEMENTS_MENU).click()
-        assert self.current_url() == "https://demoqa.com/radio-button", f'[elements_page] Открылась страница {self.current_url()}, а должна "https://demoqa.com/broken"'
+        assert self.current_url() == "https://demoqa.com/broken", f'[elements_page] Открылась страница {self.current_url()}, а должна "https://demoqa.com/broken"'
 
     def upload_in_elements_menu_click(self):
         self.find(UPLOAD_AN_DOWNLOAD_SUBMENU_IN_ELEMENTS_MENU).click()
-        assert self.current_url() == "https://demoqa.com/radio-button", f'[elements_page] Открылась страница {self.current_url()}, а должна "https://demoqa.com/upload-download"'
+        assert self.current_url() == "https://demoqa.com/upload-download", f'[elements_page] Открылась страница {self.current_url()}, а должна "https://demoqa.com/upload-download"'
 
     def dynamic_in_elements_menu_click(self):
         self.find(DYNAMIC_PROPERTIES_SUBMENU_IN_ELEMENTS_MENU).click()
-        assert self.current_url() == "https://demoqa.com/radio-button", f'[elements_page] Открылась страница {self.current_url()}, а должна "https://demoqa.com/dynamic-properties"'
+        assert self.current_url() == "https://demoqa.com/dynamic-properties", f'[elements_page] Открылась страница {self.current_url()}, а должна "https://demoqa.com/dynamic-properties"'
 
     
 
