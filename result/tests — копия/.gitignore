@@ -1,0 +1,8 @@
+# Игнорирование виртуального окружения
+.venv/
+
+# Игнорирование кэша Python
+__pycache__/
+locators/__pycache__/
+pages/__pycache__/
+test_ui/__pycache__/
